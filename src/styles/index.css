@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+/* The Garden Edit — three colours: white, espresso, cream. Everything else is a tint of these. */
+@theme {
+  --color-white: #ffffff;
+  --color-espresso: #201614;
+  --color-cream: #e1d5bf;
+  --color-linen: #f3eee5; /* cream mixed into white, for quiet surfaces */
+
+  --font-display: 'DM Serif Display', 'Times New Roman', serif;
+  --font-serif: 'DM Serif Display', 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-film: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-espresso antialiased;
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
+    font-feature-settings: 'kern', 'liga';
+  }
+  ::selection {
+    background: var(--color-cream);
+    color: var(--color-espresso);
+  }
+  :focus-visible {
+    outline: 1.5px solid currentColor;
+    outline-offset: 4px;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+/* Small, widely-spaced editorial label. */
+@utility label {
+  @apply font-sans text-[0.66rem] font-medium uppercase tracking-[0.34em] sm:text-[0.7rem];
+}
+/* Fluid display sizes */
+@utility display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 19vw, 13.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+}
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 9vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+@utility display-md {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5.4vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+@utility section-x {
+  @apply px-5 sm:px-8 lg:px-14;
+}
+@utility btn {
+  @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-7 text-[0.7rem] font-semibold uppercase tracking-[0.24em] transition-[background-color,color,border-color,transform] duration-500 ease-[var(--ease-silk)] active:scale-[0.97];
+}
+@utility btn-solid {
+  @apply btn bg-espresso text-white hover:bg-espresso/85;
+}
+@utility btn-cream {
+  @apply btn bg-cream text-espresso hover:bg-white;
+}
+@utility btn-line {
+  @apply btn border border-current/35 hover:border-current;
+}
+
+/* Film grain over dark sections. */
+@utility grain {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Jasmine strings sway from their knot. */
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.4deg); }
+  50% { transform: rotate(1.4deg); }
+}
+.sway {
+  transform-origin: 50% 0;
+  animation: sway var(--sway-dur, 7s) ease-in-out infinite;
+  animation-delay: var(--sway-delay, 0s);
+}
+
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+.scroll-cue {
+  animation: scroll-cue 2.4s var(--ease-silk) infinite;
+}
+
+/* Confetti bits drift and tumble in place. */
+@keyframes drift {
+  0%, 100% { transform: translateY(-6px) rotate(-12deg); }
+  50% { transform: translateY(6px) rotate(14deg); }
+}
+.drift {
+  animation: drift var(--drift-dur, 6s) ease-in-out infinite;
+  animation-delay: var(--drift-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift,
+  .sway,
+  .scroll-cue {
+    animation: none !important;
+  }
+}
+
+/* Page-width container that carries its own gutter: content stays 80rem wide,
+   aligned with sections that put section-x on the outer element. */
+@utility frame {
+  @apply mx-auto w-full max-w-[87rem] px-5 sm:px-8 lg:px-14;
+}
+
+/* Couple names in the script face. Unlayered so it beats the display-* utilities; looser leading so swashes aren't clipped by reveal masks. */
+.script {
+  font-family: var(--font-script);
+  letter-spacing: 0;
+  line-height: 1.15;
+}

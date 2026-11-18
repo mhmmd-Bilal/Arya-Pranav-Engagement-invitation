@@ -1,0 +1,208 @@
+{
+  "mandap-garden-morning": {
+    "width": 2400,
+    "height": 3336,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "bride-portrait-red-lehenga": {
+    "width": 2400,
+    "height": 3600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "groom-jasmine-garden": {
+    "width": 2400,
+    "height": 3600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "couple-forest-path": {
+    "width": 2400,
+    "height": 3600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "couple-river-rock": {
+    "width": 2400,
+    "height": 3595,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "couple-garden-embrace": {
+    "width": 2400,
+    "height": 3600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "couple-ivory-embrace": {
+    "width": 2400,
+    "height": 3000,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "henna-hands-dark": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "couple-floral-arch-night": {
+    "width": 2400,
+    "height": 3439,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "lawn-drapes-table": {
+    "width": 2400,
+    "height": 3437,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "hanging-jasmine-couple": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "candlelit-white-table": {
+    "width": 2400,
+    "height": 3600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "white-floral-console": {
+    "width": 2400,
+    "height": 1602,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "sweetheart-table-florals": {
+    "width": 2400,
+    "height": 1602,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "rings-hands-gold": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "rings-diamond-moody": {
+    "width": 735,
+    "height": 489,
+    "widths": [
+      640
+    ],
+    "fallback": 640
+  },
+  "rings-gold-moss": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "rings-diamond-roses": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  },
+  "rings-peony-bouquet": {
+    "width": 2400,
+    "height": 1600,
+    "widths": [
+      640,
+      1080,
+      1600,
+      2400
+    ],
+    "fallback": 1080
+  }
+}
