@@ -17,7 +17,7 @@ const CONFETTI = [
 function EventCard({ event, index }) {
   const [, day, month] = event.date.match(/(\d+)\s+(\w+)/) ?? [];
   return (
-    <Reveal className={index % 2 ? 'sm:mt-12' : ''}>
+    <Reveal delay={index * 0.15} className={index % 2 ? 'sm:mt-12' : ''}>
       <article className="flex gap-5 rounded-3xl p-6 shadow-sm sm:p-8" style={{ backgroundColor: CARDS[index % 2] }}>
         <div className="shrink-0 text-center">
           <p className="font-serif text-5xl italic leading-none sm:text-6xl" style={{ color: ACCENT }}>{day}</p>

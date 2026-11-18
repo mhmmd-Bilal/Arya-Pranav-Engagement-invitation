@@ -30,14 +30,14 @@ export default function Closing() {
         <JasmineRow layout={[[4, 10, 0.8], [9, 6, 0.6], [88, 7, 0.6], [94, 11, 0.8]]} className="z-[2] max-md:hidden" />
 
         <div className="frame relative z-[2] flex min-h-[100svh] flex-col justify-end pb-16 pt-32">
-          <Reveal className="max-w-2xl">
-            <p className="font-serif text-2xl italic leading-snug text-white/90 sm:text-3xl">{closing.message}</p>
-            <p className="mt-8 font-serif text-xl italic text-cream sm:text-2xl">
+          <div className="max-w-2xl">
+            <Reveal as="p" className="font-serif text-2xl italic leading-snug text-white/90 sm:text-3xl">{closing.message}</Reveal>
+            <Reveal as="p" delay={0.35} className="mt-8 font-serif text-xl italic text-cream sm:text-2xl">
               {closing.signOff}
               <br />
               {bride.name} &amp; {groom.name}
-            </p>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </div>
 

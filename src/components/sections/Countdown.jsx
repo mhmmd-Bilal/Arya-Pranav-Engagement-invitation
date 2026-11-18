@@ -62,12 +62,13 @@ export default function Countdown() {
         {done ? (
           <Reveal className="max-w-lg text-lg text-white/80">The celebrations have begun. Thank you for your blessings!</Reveal>
         ) : (
-          <Reveal className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
-            <Unit value={days} label="Days" />
-            <Unit value={hours} label="Hours" />
-            <Unit value={minutes} label="Minutes" />
-            <Unit value={seconds} label="Seconds" />
-          </Reveal>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-12 lg:grid-cols-4">
+            {[[days, 'Days'], [hours, 'Hours'], [minutes, 'Minutes'], [seconds, 'Seconds']].map(([v, label], i) => (
+              <Reveal key={label} delay={i * 0.12}>
+                <Unit value={v} label={label} />
+              </Reveal>
+            ))}
+          </div>
         )}
         {!done && (
           <p className="sr-only" data-countdown-text>

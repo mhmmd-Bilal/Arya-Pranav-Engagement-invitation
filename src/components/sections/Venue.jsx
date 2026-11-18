@@ -1,14 +1,13 @@
 import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Map as MapIcon, MapPin, Navigation, X } from 'lucide-react';
-import Kicker from '../common/Kicker';
 import Picture from '../common/Picture';
 import { EASE, Reveal, RevealText } from '../common/Reveal';
 import { useGsap } from '../../hooks/useGsap';
 import { weddingData } from '../../data/weddingData';
 
 export default function Venue() {
-  const { venue, city } = weddingData;
+  const { venue } = weddingData;
   const ref = useRef(null);
   const [showMap, setShowMap] = useState(false);
   const q = encodeURIComponent(venue.mapQuery);
@@ -32,10 +31,7 @@ export default function Venue() {
         <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/45 to-espresso/10" />
 
         <div className="frame relative z-[2] pb-14 pt-40 sm:pb-20">
-          <Kicker index="01" light>
-            The Venue
-          </Kicker>
-          <RevealText text={venue.name} className="display-lg mt-8 max-w-5xl font-normal" />
+          <RevealText text={venue.name} className="display-lg max-w-5xl font-normal" />
 
           <div className="mt-10 grid gap-10 lg:grid-cols-12">
             <Reveal className="lg:col-span-5">
@@ -62,7 +58,6 @@ export default function Venue() {
               </button>
             </Reveal>
           </div>
-          <p className="label mt-12 text-cream/50">{city}</p>
         </div>
       </div>
 
