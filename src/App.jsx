@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, MotionConfig } from 'framer-motion';
 import PromoButton from './components/layout/PromoButton';
+import MuteButton from './components/layout/MuteButton';
 import Cursor from './components/common/Cursor';
 import Intro from './components/sections/Intro';
 import Hero from './components/sections/Hero';
@@ -63,6 +64,7 @@ export default function App() {
       </a>
       <AnimatePresence>{!opened && <Intro key="intro" onDone={open} />}</AnimatePresence>
       {opened && <PromoButton />}
+      {opened && <MuteButton />}
       <Cursor />
       <main inert={!opened ? '' : undefined}>
         <Hero ready={opened} />

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { EASE } from '../common/Reveal';
 import { weddingData } from '../../data/weddingData';
+import { music } from '../../lib/music';
 
 const fade = (delay, y = 16) => ({
   initial: { opacity: 0, y },
@@ -20,6 +21,8 @@ export default function Intro({ onDone }) {
   }, []);
 
   function openEnvelope() {
+    // Must start inside the click handler, or browsers block autoplay.
+    music.play().catch(() => {});
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return onDone();
     setOpen(true);
   }
