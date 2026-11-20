@@ -35,7 +35,7 @@ export default function Intro({ onDone }) {
       className="grain fixed inset-0 z-[60] flex flex-col overflow-hidden bg-espresso text-white"
       exit={{ opacity: 0, transition: { duration: 0.9, ease: EASE } }}
     >
-      <div className="flex flex-1 items-center justify-center px-5 pt-[18vh]">
+      <div className="flex flex-1 flex-col items-center justify-center px-5 pt-[18vh]">
         <motion.div {...fade(0.3, 30)} className="relative aspect-[3/2] w-[84vw] max-w-[26rem] [perspective:1200px]">
           {/* inside of the envelope */}
           <div className="absolute inset-0 bg-cream" />
@@ -86,6 +86,16 @@ export default function Intro({ onDone }) {
             </span>
           </motion.button>
         </motion.div>
+
+        <motion.p
+          aria-hidden="true"
+          className="mt-8 text-center text-xs uppercase tracking-[0.3em] text-cream/70"
+          initial={{ opacity: 0 }}
+          animate={open ? { opacity: 0 } : { opacity: [0.4, 1, 0.4] }}
+          transition={open ? { duration: 0.3 } : { duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+        >
+          Tap the seal
+        </motion.p>
       </div>
 
     </motion.div>
